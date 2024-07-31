@@ -28,8 +28,8 @@ export const Usuario = connection.define('usuario', {
   }
 })
 
-Usuario.hasOne(Endereco)
+Usuario.hasOne(Endereco, { onDelete: 'CASCADE' })
 Endereco.belongsTo(Usuario)
 
-Usuario.hasMany(Emprestimo)
+Usuario.hasMany(Emprestimo, { onDelete: 'CASCADE' })
 Emprestimo.belongsTo(Usuario)
